@@ -3,10 +3,10 @@
     "version": "0.2.6",
     "slug": "octoprint",
     "description": "Octoprint add-on for Hass.io",
-    "arch": [],
-    "url": "https://github.com/fredrikbaberg/hassio-addons",
+    "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+    "url": "https://github.com/TonMise/hassio-addons",
     "startup": "application",
-    "boot": "manual",
+    "boot": "auto",
     "ports": {
         "5000/tcp": 5000
     },
