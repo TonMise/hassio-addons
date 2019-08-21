@@ -64,11 +64,11 @@ WORKDIR /
 CMD [ "/run.sh" ]
 
 # # Add user with sudo access.
-# # RUN apk add --no-cache sudo && \
-# #     addgroup -S octoprint && \
-# #     adduser -G octoprint -g "octoprint user" -s /bin/sh -D octoprint && \
-# #     addgroup octoprint dialout && \
-# #     addgroup octoprint tty && \
-# #     echo "octoprint ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-# # USER octoprint
-# # WORKDIR /home/octoprint
+RUN apk add --no-cache sudo && \
+    addgroup -S octoprint && \
+    adduser -G octoprint -g "octoprint user" -s /bin/sh -D octoprint && \
+    addgroup octoprint dialout && \
+    addgroup octoprint tty && \
+    echo "octoprint ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+USER octoprint
+WORKDIR /home/octoprint
